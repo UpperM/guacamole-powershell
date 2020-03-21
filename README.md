@@ -276,5 +276,4 @@ Get-GuacActiveConnections -DataSource mysql
 * Update-GuacUserPassword
 
 # Author
-Author:: UpperM
-Readme based on https://github.com/Sam-Martin/servicenow-powershell
+Author: [UpperM](https://twitter.com/UppperM)
