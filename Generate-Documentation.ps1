@@ -6,7 +6,6 @@ $Folders = Get-ChildItem -Path "$RootFolder\Public"
 
 foreach ($Folder in $Folders)
 {
-
     $TableContent       = ""
     $Content            = ""
     $DocumentationFile  = "$PSScriptRoot\Documentation\$Folder.md"
