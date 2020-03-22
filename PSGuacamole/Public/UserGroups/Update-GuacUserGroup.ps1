@@ -55,6 +55,7 @@ Function Update-GuacUserGroup()
     }
 }
 
+<#
 $Parameters = @{
     "identifier"= "test"
     "attributes"= @{
@@ -62,6 +63,6 @@ $Parameters = @{
     }
 }
 
-#Update-GuacUserGroup -DataSource mysql -Parameters $Parameters -Group "test"
-
+Update-GuacUserGroup -DataSource mysql -Parameters $Parameters -Group "test"
+#>
 

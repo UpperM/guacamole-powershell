@@ -9,8 +9,6 @@ Function Get-GuacSharingProfile()
         [System.String]
         $DataSource,
 
-
-
         [ValidateNotNullOrEmpty()]
         [Parameter(
             Position = 1,
@@ -27,24 +25,22 @@ Function Get-GuacSharingProfile()
     }
     process
     {
-
         try
         {
             $RestCall = Invoke-RestMethod -Method GET -Uri $Uri -ContentType 'application/json' -Body $Body
         }
         catch
         {
-
             Write-Warning $_.Exception.Message
             return $False
         }
-
     }
     end
     {
-
         return $RestCall
     }
 }
 
-#Get-GuacSharingProfile -DataSource mysql -SharingProfileId 1
+<#
+Get-GuacSharingProfile -DataSource mysql -SharingProfileId 1
+#>

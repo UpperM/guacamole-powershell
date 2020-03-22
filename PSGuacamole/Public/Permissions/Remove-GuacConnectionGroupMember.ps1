@@ -9,8 +9,6 @@ Function Remove-GuacConnectionGroupMember()
         [System.String]
         $DataSource,
 
-
-
         [ValidateNotNullOrEmpty()]
         [Parameter(
             Position = 2,
@@ -47,11 +45,9 @@ Function Remove-GuacConnectionGroupMember()
 
         $Body = "[$($Body)]"
         $Uri = "$Server/api/session/data/$($DataSource)/users/$Username/permissions?token=$($Token)"
-
     }
     process
     {
-
         try
         {
             $RestCall = Invoke-RestMethod -Method PATCH -Uri $Uri -ContentType 'application/json' -Body $Body
@@ -61,7 +57,6 @@ Function Remove-GuacConnectionGroupMember()
             Write-Warning $_.Exception.Message
             return $False
         }
-
     }
     end
     {
@@ -69,4 +64,6 @@ Function Remove-GuacConnectionGroupMember()
     }
 }
 
-#Remove-GuacConnectionGroupMember -DataSource mysql -Username "john.doe" -Permission "READ" -ConnectionGroupId 1
+<#
+Remove-GuacConnectionGroupMember -DataSource mysql -Username "john.doe" -Permission "READ" -ConnectionGroupId 1
+#>

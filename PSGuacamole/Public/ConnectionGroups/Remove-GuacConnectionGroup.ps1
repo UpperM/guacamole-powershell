@@ -44,5 +44,6 @@ Function Remove-GuacConnectionGroup()
         return $True
     }
 }
-
-#Remove-GuacConnectionGroup -DataSource mysql -ConnectionGroupId 3
+<#
+Remove-GuacConnectionGroup -DataSource mysql -ConnectionGroupId 3
+#>

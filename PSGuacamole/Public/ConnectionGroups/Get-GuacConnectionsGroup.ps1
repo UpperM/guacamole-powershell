@@ -61,5 +61,6 @@ Function Get-GuacConnectionsGroup()
         return $RestCall
     }
 }
-
-#Get-GuacConnectionsGroup -DataSource mysql -ConnectionGroupId 1 -Details $True
+<#
+Get-GuacConnectionsGroup -DataSource mysql -ConnectionGroupId 1 -Details $True
+#>

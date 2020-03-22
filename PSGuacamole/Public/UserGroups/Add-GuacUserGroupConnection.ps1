@@ -60,4 +60,6 @@ Function Add-GuacUserGroupConnection()
     }
 }
 
-#Add-GuacUserGroupConnection -DataSource mysql -ConnectionId 52 -Group "test"
+<#
+Add-GuacUserGroupConnection -DataSource mysql -ConnectionId 52 -Group "test"
+#>

@@ -46,5 +46,6 @@ Function Get-GuacConnectionsGroupDetails()
         return $RestCall
     }
 }
-
-#Get-GuacConnectionsGroupDetails -DataSource mysql -ConnectionGroupId 2
+<#
+Get-GuacConnectionsGroupDetails -DataSource mysql -ConnectionGroupId 2
+#>

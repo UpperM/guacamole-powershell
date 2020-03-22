@@ -44,6 +44,7 @@ Function New-GuacUser()
     }
 }
 
+<#
 $Parameters = @{
     "username"= "test"
     "password"= "pass"
@@ -62,3 +63,4 @@ $Parameters = @{
 }
 
 New-GuacUser -DataSource mysql -Parameters $Parameters
+#>

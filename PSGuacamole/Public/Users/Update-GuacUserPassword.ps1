@@ -65,4 +65,6 @@ Function Update-GuacUserPassword()
     }
 }
 
-#Update-GuacUserPassword -DataSource mysql -NewPassword "NewPass" -Username "john.doe" -OldPassword "OldPass"
+<#
+Update-GuacUserPassword -DataSource mysql -NewPassword "NewPass" -Username "john.doe" -OldPassword "OldPass"
+#>

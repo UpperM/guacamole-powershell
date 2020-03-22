@@ -9,8 +9,6 @@ Function Add-GuacSystemPermission()
         [System.String]
         $DataSource,
 
-
-
         [ValidateNotNullOrEmpty()]
         [Parameter(
             Position = 2,
@@ -38,11 +36,9 @@ Function Add-GuacSystemPermission()
 
         $Body = "[$($Body)]"
         $Uri = "$Server/api/session/data/$($DataSource)/users/$Username/permissions?token=$($Token)"
-
     }
     process
     {
-
         try
         {
             $RestCall = Invoke-RestMethod -Method PATCH -Uri $Uri -ContentType 'application/json' -Body $Body
@@ -52,7 +48,6 @@ Function Add-GuacSystemPermission()
             Write-Warning $_.Exception.Message
             return $False
         }
-
     }
     end
     {
@@ -60,4 +55,6 @@ Function Add-GuacSystemPermission()
     }
 }
 
-#Add-GuacSystemPermission -DataSource mysql -Username "john.doe" -Permission "ADMINISTER"
+<#
+Add-GuacSystemPermission -DataSource mysql -Username "john.doe" -Permission "ADMINISTER"
+#>

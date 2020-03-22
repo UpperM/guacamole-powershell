@@ -48,7 +48,7 @@ Function New-GuacConnectionGroup()
     }
 }
 
-
+<#
 $Parameters = @{
     "name"="New Group Name 2"
     "parentIdentifier"="1"
@@ -60,6 +60,5 @@ $Parameters = @{
     }
 }
 
-#New-GuacConnectionGroup -DataSource mysql -Parameters $Parameters
-
-
+New-GuacConnectionGroup -DataSource mysql -Parameters $Parameters
+#>

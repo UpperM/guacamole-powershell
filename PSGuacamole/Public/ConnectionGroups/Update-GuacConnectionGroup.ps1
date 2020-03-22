@@ -68,6 +68,5 @@ $Parameters = @{
     }
 }
 
-Update-GuacConnectionGroup -DataSource mysql -ConnectionGroupId 1 -Parameters $a
-
+Update-GuacConnectionGroup -DataSource mysql -ConnectionGroupId 1 -Parameters $Parameters
 #>

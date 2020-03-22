@@ -62,4 +62,6 @@ Function Remove-GuacUserGroupConnection()
     }
 }
 
-#Remove-GuacUserGroupConnection -DataSource mysql -ConnectionId 52 -Group "test"
+<#
+Remove-GuacUserGroupConnection -DataSource mysql -ConnectionId 52 -Group "test"
+#>

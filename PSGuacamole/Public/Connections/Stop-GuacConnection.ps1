@@ -9,11 +9,9 @@ Function Stop-GuacConnection()
         [System.String]
         $DataSource,
 
-
-
         [ValidateNotNullOrEmpty()]
         [Parameter(
-            Position = 2,
+            Position = 1,
             Mandatory = $true
         )]
         [System.String]
@@ -31,7 +29,6 @@ Function Stop-GuacConnection()
     }
     process
     {
-
         try
         {
             $RestCall = Invoke-RestMethod -Method PATCH -Uri $Uri -ContentType 'application/json' -Body $Body
@@ -41,7 +38,6 @@ Function Stop-GuacConnection()
             Write-Warning $_.Exception.Message
             return $False
         }
-
     }
     end
     {
@@ -49,4 +45,6 @@ Function Stop-GuacConnection()
     }
 }
 
-#Stop-GuacConnection -DataSource mysql -Identifier "0a33d486-9947-4b67-bc17-9e1f5180aece"
+<#
+Stop-GuacConnection -DataSource mysql -Identifier "0a33d486-9947-4b67-bc17-9e1f5180aece"
+#>

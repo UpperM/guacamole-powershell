@@ -16,24 +16,22 @@ Function Get-GuacLanguages()
     }
     process
     {
-
         try
         {
             $RestCall = Invoke-RestMethod -Method GET -Uri $Uri -ContentType 'application/json'
         }
         catch
         {
-
             Write-Warning $_.Exception.Message
             return $False
         }
-
     }
     end
     {
-
         return $RestCall
     }
 }
 
-#Get-GuacLanguages
+<#
+Get-GuacLanguages
+#>

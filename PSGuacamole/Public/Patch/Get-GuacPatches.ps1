@@ -16,14 +16,12 @@ Function Get-GuacPatches()
     }
     process
     {
-
         try
         {
             $RestCall = Invoke-RestMethod -Method GET -Uri $Uri -ContentType 'application/json'
         }
         catch
         {
-
             Write-Warning $_.Exception.Message
             return $False
         }
@@ -31,9 +29,10 @@ Function Get-GuacPatches()
     }
     end
     {
-
         return $RestCall
     }
 }
 
-#Get-GuacPatches
+<#
+Get-GuacPatches
+#>

@@ -13,28 +13,25 @@ Function Get-GuacSharingProfiles()
     begin
     {
         $Uri = "$Server/api/session/data/$($DataSource)/sharingProfiles/?token=$($Token)"
-
     }
     process
     {
-
         try
         {
             $RestCall = Invoke-RestMethod -Method GET -Uri $Uri -ContentType 'application/json' -Body $Body
         }
         catch
         {
-
             Write-Warning $_.Exception.Message
             return $False
         }
-
     }
     end
     {
-
         return $RestCall.PsObject.Properties.Value
     }
 }
 
-#Get-GuacSharingProfiles -DataSource mysql
+<#
+Get-GuacSharingProfiles -DataSource mysql
+#>

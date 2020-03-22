@@ -9,11 +9,9 @@ Function Add-GuacConnectionGroupMember()
         [System.String]
         $DataSource,
 
-
-
         [ValidateNotNullOrEmpty()]
         [Parameter(
-            Position = 2,
+            Position = 1,
             Mandatory = $true
         )]
         [System.String]
@@ -29,12 +27,11 @@ Function Add-GuacConnectionGroupMember()
 
         [ValidateNotNullOrEmpty()]
         [Parameter(
-            Position = 2,
+            Position = 3,
             Mandatory = $true
         )]
         [System.String]
         $ConnectionGroupId
-
     )
 
     begin
@@ -47,11 +44,9 @@ Function Add-GuacConnectionGroupMember()
 
         $Body = "[$($Body)]"
         $Uri = "$Server/api/session/data/$($DataSource)/users/$Username/permissions?token=$($Token)"
-
     }
     process
     {
-
         try
         {
             $RestCall = Invoke-RestMethod -Method PATCH -Uri $Uri -ContentType 'application/json' -Body $Body
@@ -61,7 +56,6 @@ Function Add-GuacConnectionGroupMember()
             Write-Warning $_.Exception.Message
             return $False
         }
-
     }
     end
     {
@@ -69,4 +63,6 @@ Function Add-GuacConnectionGroupMember()
     }
 }
 
-#Add-GuacConnectionGroupMember -DataSource mysql -Username "john.doe" -Permission "READ" -ConnectionGroupId 1
+<#
+Add-GuacConnectionGroupMember -DataSource mysql -Username "john.doe" -Permission "READ" -ConnectionGroupId 1
+#>

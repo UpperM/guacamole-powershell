@@ -32,5 +32,6 @@ Function Remove-GuacToken()
     {
     }
 }
-
-#Remove-GuacToken -Token "5" -Server "https://remote.fontenay-aux-roses.fr"
+<#
+Remove-GuacToken -Token $TokenToRemove -Server "http://srv-guacamole:8080/guacamole"
+#>

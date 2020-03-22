@@ -62,4 +62,6 @@ Function Remove-GuacUserConnection()
     }
 }
 
-#Remove-GuacUserConnection -DataSource mysql -ConnectionId 53 -Username "john.doe"
+<#
+Remove-GuacUserConnection -DataSource mysql -ConnectionId 53 -Username "john.doe"
+#>

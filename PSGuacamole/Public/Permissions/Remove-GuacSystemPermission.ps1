@@ -9,8 +9,6 @@ Function Remove-GuacSystemPermission()
         [System.String]
         $DataSource,
 
-
-
         [ValidateNotNullOrEmpty()]
         [Parameter(
             Position = 2,
@@ -41,7 +39,6 @@ Function Remove-GuacSystemPermission()
     }
     process
     {
-
         try
         {
             $RestCall = Invoke-RestMethod -Method PATCH -Uri $Uri -ContentType 'application/json' -Body $Body
@@ -51,7 +48,6 @@ Function Remove-GuacSystemPermission()
             Write-Warning $_.Exception.Message
             return $False
         }
-
     }
     end
     {
@@ -59,4 +55,6 @@ Function Remove-GuacSystemPermission()
     }
 }
 
-#Remove-GuacSystemPermission -DataSource mysql -Username "john.doe" -Permission "ADMINISTER"
+<#
+Remove-GuacSystemPermission -DataSource mysql -Username "john.doe" -Permission "ADMINISTER"
+#>

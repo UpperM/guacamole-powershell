@@ -9,14 +9,12 @@ Function Get-GuacActiveConnections()
         [System.String]
         $DataSource
     )
-
     begin
     {
         $Uri = "$Server/api/session/data/$($DataSource)/activeConnections/?token=$($Token)"
     }
     process
     {
-
         try
         {
             $RestCall = Invoke-RestMethod -Method GET -Uri $Uri -ContentType 'application/json'
@@ -24,17 +22,16 @@ Function Get-GuacActiveConnections()
 
         catch
         {
-
             Write-Warning $_.Exception.Message
             return $False
         }
-
     }
     end
     {
-
         return $RestCall.PsObject.Properties.Value
     }
 }
 
-#Get-GuacActiveConnections -DataSource mysql
+<#
+Get-GuacActiveConnections -DataSource mysql
+#>

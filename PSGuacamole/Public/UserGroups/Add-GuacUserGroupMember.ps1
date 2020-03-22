@@ -61,4 +61,6 @@ Function Add-GuacUserGroupMember()
     }
 }
 
-#Add-GuacUserGroupMember -DataSource mysql -Username "john.doe" -Member "test"
+<#
+Add-GuacUserGroupMember -DataSource mysql -Username "john.doe" -Member "test"
+#>

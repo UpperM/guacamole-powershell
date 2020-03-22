@@ -46,6 +46,6 @@ Function Remove-GuacUserGroup()
     }
 }
 
-#Remove-GuacUserGroup -DataSource mysql -Group "Parent"
-
-
+<#
+Remove-GuacUserGroup -DataSource mysql -Group "Parent"
+#>

@@ -60,4 +60,6 @@ Function Add-GuacUserConnection()
     }
 }
 
-#Add-GuacUserConnection -DataSource mysql -ConnectionId 53 -Username "john.doe"
+<#
+Add-GuacUserConnection -DataSource mysql -ConnectionId 53 -Username "john.doe"
+#>

@@ -9,8 +9,6 @@ Function Remove-GuacSharingProfile()
         [System.String]
         $DataSource,
 
-
-
         [ValidateNotNullOrEmpty()]
         [Parameter(
             Position = 2,
@@ -18,7 +16,6 @@ Function Remove-GuacSharingProfile()
         )]
         [System.String]
         $SharingProfileId
-
     )
 
     begin
@@ -27,14 +24,12 @@ Function Remove-GuacSharingProfile()
     }
     process
     {
-
         try
         {
             Invoke-RestMethod -Method DELETE -Uri $Uri -ContentType 'application/json' -Body $Body
         }
         catch
         {
-
             throw $_.Exception.Message
             return $False
         }
@@ -45,4 +40,6 @@ Function Remove-GuacSharingProfile()
     }
 }
 
-#Remove-GuacSharingProfile -DataSource mysql -SharingProfileId 2
+<#
+Remove-GuacSharingProfile -DataSource mysql -SharingProfileId 2
+#>

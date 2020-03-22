@@ -62,4 +62,6 @@ Function Update-GuacUserGroupParent()
     }
 }
 
-#Update-GuacUserGroupParent -DataSource mysql -Parent "Parent" -Children "test"
+<#
+Update-GuacUserGroupParent -DataSource mysql -Parent "Parent" -Children "test"
+#>

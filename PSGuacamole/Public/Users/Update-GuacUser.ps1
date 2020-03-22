@@ -55,8 +55,8 @@ Function Update-GuacUser()
     }
 }
 
+<#
 $Username = "john.doe"
-
 $Parameters = @{
     "username"= "$Username"
     "attributes"= @{
@@ -74,4 +74,5 @@ $Parameters = @{
     }
 }
 
-#Update-GuacUser -DataSource mysql -Username $Username -Parameters $Parameters
+Update-GuacUser -DataSource mysql -Username $Username -Parameters $Parameters
+#>

@@ -14,7 +14,6 @@ Function New-GuacSharingProfile()
             Mandatory = $True
         )]
         $Parameters
-
     )
 
     begin
@@ -24,25 +23,22 @@ Function New-GuacSharingProfile()
     }
     process
     {
-
         try
         {
             $RestCall = Invoke-RestMethod -Method POST -Uri $Uri -ContentType 'application/json' -Body $Body -Verbose
         }
         catch
         {
-
             Write-Warning $_
             return $False
         }
-
     }
     end
     {
         return $RestCall
     }
 }
-
+<#
 $Parameters = @{
     "primaryConnectionIdentifier"= "52"
     "name"= "NewSharingProfile"
@@ -52,4 +48,5 @@ $Parameters = @{
     "attributes"= @{}
 }
 
-#New-GuacSharingProfile -DataSource mysql -Parameters $Parameters
+New-GuacSharingProfile -DataSource mysql -Parameters $Parameters
+#>

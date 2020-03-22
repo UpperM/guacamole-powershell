@@ -13,28 +13,25 @@ Function Get-GuacSchemaUser()
     begin
     {
         $Uri = "$Server/api/session/data/$($DataSource)/schema/userAttributes/?token=$($Token)"
-
     }
     process
     {
-
         try
         {
             $RestCall = Invoke-RestMethod -Method GET -Uri $Uri -ContentType 'application/json' -Body $Body
         }
         catch
         {
-
             Write-Warning $_.Exception.Message
             return $False
         }
-
     }
     end
     {
-
         return $RestCall
     }
 }
 
-#Get-GuacSchemaUser -DataSource mysql
+<#
+Get-GuacSchemaUser -DataSource mysql
+#>

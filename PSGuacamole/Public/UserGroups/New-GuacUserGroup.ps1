@@ -46,13 +46,12 @@ Function New-GuacUserGroup()
     }
 }
 
-
+<#
 $Parameters = @{
     "identifier"= "Parent"
     "attributes"= @{
       "disabled"= ""
     }
 }
-#New-GuacUserGroup -DataSource mysql -Parameters $Parameters
-
-
+New-GuacUserGroup -DataSource mysql -Parameters $Parameters
+#>

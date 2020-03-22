@@ -9,11 +9,9 @@ Function Remove-GuacConnection()
         [System.String]
         $DataSource,
 
-
-
         [ValidateNotNullOrEmpty()]
         [Parameter(
-            Position = 2,
+            Position = 1,
             Mandatory = $true
         )]
         [System.String]
@@ -27,14 +25,12 @@ Function Remove-GuacConnection()
     }
     process
     {
-
         try
         {
             Invoke-RestMethod -Method DELETE -Uri $Uri -ContentType 'application/json' -Body $Body
         }
         catch
         {
-
             throw $_.Exception.Message
             return $False
         }
@@ -45,4 +41,6 @@ Function Remove-GuacConnection()
     }
 }
 
-#Remove-GuacConnection -DataSource mysql -ConnectionId 74
+<#
+Remove-GuacConnection -DataSource mysql -ConnectionId 74
+#>

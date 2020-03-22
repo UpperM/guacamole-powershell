@@ -36,4 +36,6 @@ Function Get-GuacConnectionsGroupsConnections()
     }
 }
 
-#Get-GuacConnectionsGroupsConnections -DataSource mysql
+<#
+Get-GuacConnectionsGroupsConnections -DataSource mysql
+#>

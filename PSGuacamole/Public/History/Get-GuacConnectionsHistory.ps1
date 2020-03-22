@@ -9,8 +9,6 @@ Function Get-GuacConnectionsHistory()
         [System.String]
         $DataSource,
 
-
-
         [ValidateNotNullOrEmpty()]
         [Parameter(
             Position = 1,
@@ -44,14 +42,12 @@ Function Get-GuacConnectionsHistory()
     }
     process
     {
-
         try
         {
             $RestCall = Invoke-RestMethod -Method GET -Uri $Uri -ContentType 'application/json'
         }
         catch
         {
-
             Write-Warning $_.Exception.Message
             return $False
         }
@@ -59,9 +55,10 @@ Function Get-GuacConnectionsHistory()
     }
     end
     {
-
         return $RestCall
     }
 }
 
-#Get-GuacConnectionsHistory -DataSource mysql -Contains "cms.cabinet02@fontenay-aux-roses.fr"
+<#
+Get-GuacConnectionsHistory -DataSource mysql -Contains "cms.cabinet02@fontenay-aux-roses.fr"
+#>

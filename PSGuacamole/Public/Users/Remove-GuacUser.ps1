@@ -43,4 +43,6 @@ Function Remove-GuacUser()
     }
 }
 
-#Remove-GuacUser -DataSource mysql -Username "test"
+<#
+Remove-GuacUser -DataSource mysql -Username "test"
+#>

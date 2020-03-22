@@ -52,11 +52,12 @@ Function New-GuacToken()
     }
     end
     {
-        #$Result = ConvertFrom-Json -InputObject $Call.Content
         $Global:Token = $RestCall.authToken
         $Global:Server = $Server
         return $RestCall
     }
 }
 
-#New-GuacToken -Username guacadmin -Password guacadmin -Server "https://remote.fontenay-aux-roses.fr"
+<#
+New-GuacToken -Username guacadmin -Password guacadmin -Server "http://srv-guacamole:8080/guacamole"
+#>

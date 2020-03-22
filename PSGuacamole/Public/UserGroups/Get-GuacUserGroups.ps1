@@ -35,4 +35,6 @@ Function Get-GuacUserGroups()
     }
 }
 
-#Get-GuacUserGroups -DataSource mysql
+<#
+Get-GuacUserGroups -DataSource mysql
+#>

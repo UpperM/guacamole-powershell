@@ -46,34 +46,26 @@ Function Get-GuacConnection()
             $Uri += "/history"
         }
 
-        <# TO DO
-        if ($SharingProfiles -and !$Details -and !$History)
-        {
-            $Uri += "/sharingProfiles"
-        }
-        #>
         $Uri += "/?token=$($Token)"
     }
     process
     {
-
         try
         {
             $RestCall = Invoke-RestMethod -Method GET -Uri $Uri -ContentType 'application/json' -Body $Body
         }
         catch
         {
-
             Write-Warning $_.Exception.Message
             return $False
         }
-
     }
     end
     {
-
         return $RestCall
     }
 }
 
-#Get-GuacConnection -DataSource mysql -ConnectionId 41 -Details $False -History $False
+<#
+Get-GuacConnection -DataSource mysql -ConnectionId 41 -Details $False -History $False
+#>

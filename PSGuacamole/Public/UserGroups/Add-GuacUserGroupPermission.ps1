@@ -68,4 +68,6 @@ Function Add-GuacUserGroupPermission()
     }
 }
 
-#Add-GuacUserGroupPermission -DataSource mysql -Group "test" -Permission "READ"
+<#
+Add-GuacUserGroupPermission -DataSource mysql -Group "test" -Permission "READ"
+#>

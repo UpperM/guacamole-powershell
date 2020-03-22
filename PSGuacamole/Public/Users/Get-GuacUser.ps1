@@ -60,4 +60,6 @@ Function Get-GuacUser()
     }
 }
 
-#Get-GuacUser -DataSource mysql -Username "guacadmin" -Details permissions
+<#
+Get-GuacUser -DataSource mysql -Username "guacadmin" -Details permissions
+#>

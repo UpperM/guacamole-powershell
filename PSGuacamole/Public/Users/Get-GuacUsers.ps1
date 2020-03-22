@@ -35,4 +35,6 @@ Function Get-GuacUsers()
     }
 }
 
-#Get-GuacUser -DataSource mysql
+<#
+Get-GuacUser -DataSource mysql
+#>

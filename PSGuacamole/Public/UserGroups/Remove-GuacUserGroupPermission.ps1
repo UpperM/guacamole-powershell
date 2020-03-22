@@ -68,4 +68,6 @@ Function Remove-GuacUserGroupPermission()
     }
 }
 
-#Remove-GuacUserGroupPermission -DataSource mysql -Group "test" -Permission "ADMINISTER"
+<#
+Remove-GuacUserGroupPermission -DataSource mysql -Group "test" -Permission "ADMINISTER"
+#>
