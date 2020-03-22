@@ -52,8 +52,8 @@ Function New-GuacToken()
     }
     end
     {
-        $Global:Token = $RestCall.authToken
-        $Global:Server = $Server
+        $Script:Token = $RestCall.authToken
+        $Script:Server = $Server
         return $RestCall
     }
 }
