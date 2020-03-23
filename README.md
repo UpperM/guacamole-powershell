@@ -9,7 +9,7 @@ This PowerShell module provides a series of cmdlets for interacting with the [Ap
 <!-- TABLE OF CONTENTS -->
 ## Table of Contents
 * [Getting Started](#getting-started)
-  * [Requirements](Documentation/requirements)
+  * [Requirements](#requirements)
   * [Installation](#installation)
 * [Examples](#examples)
   * [Authentification](#authentification)
