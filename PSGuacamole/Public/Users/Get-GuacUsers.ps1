@@ -31,10 +31,11 @@ Function Get-GuacUsers()
     }
     end
     {
-        return $RestCall
+        return $RestCall.PsObject.Properties.Value
     }
 }
 
 <#
-Get-GuacUser -DataSource mysql
+Get-GuacUsers -DataSource mysql
 #>
+
