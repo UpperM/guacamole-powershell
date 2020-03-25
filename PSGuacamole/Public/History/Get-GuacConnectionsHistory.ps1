@@ -38,7 +38,6 @@ Function Get-GuacConnectionsHistory()
         {
             $Uri = "$Uri&order=$($Order)"
         }
-        Write-Output $Uri
     }
     process
     {
