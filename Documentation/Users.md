@@ -1,4 +1,4 @@
-# Users 
+# Users
 
  - [Add-GuacUserConnection](#add-guacuserconnection)
  - [Get-GuacUser](#get-guacuser)
@@ -19,7 +19,7 @@ Get-GuacUser -DataSource mysql -Username "guacadmin" -Details permissions
 ```
 ## Get-GuacUsers
 ```Powershell
-Get-GuacUser -DataSource mysql
+Get-GuacUsers -DataSource mysql
 ```
 ## New-GuacUser
 ```Powershell
