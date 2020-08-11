@@ -31,7 +31,7 @@ Function Get-GuacUser()
 
     begin
     {
-        $Uri = "$Server/api/session/data/$($DataSource)/users/$($Username)/"
+        $Uri = "$Server/api/session/data/$($DataSource)/users/$($Username)"
 
         if ($Details)
         {
