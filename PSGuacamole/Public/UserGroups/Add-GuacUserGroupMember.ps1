@@ -9,15 +9,12 @@ Function Add-GuacUserGroupMember()
         [System.String]
         $DataSource,
 
-
-
         [ValidateNotNullOrEmpty()]
         [Parameter(
             Position = 2,
             Mandatory = $true
         )]
         [System.String]
-
         $Member,
 
         [ValidateNotNullOrEmpty()]
@@ -38,8 +35,7 @@ Function Add-GuacUserGroupMember()
         } | ConvertTo-Json
         $Body   = "[$($Parameters)]"
         $Uri    = "$Server/api/session/data/$($DataSource)/userGroups/$Group/memberUsers/?token=$($Token)"
-        Write-Output $Uri
-        Write-Output $Body
+
     }
     process
     {
