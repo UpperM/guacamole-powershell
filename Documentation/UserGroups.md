@@ -1,4 +1,4 @@
-# UserGroups 
+# UserGroups
 
  - [Add-GuacUserGroupConnection](#add-guacusergroupconnection)
  - [Add-GuacUserGroupMember](#add-guacusergroupmember)
