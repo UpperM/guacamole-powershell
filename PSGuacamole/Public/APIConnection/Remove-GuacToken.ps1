@@ -12,7 +12,7 @@ Function Remove-GuacToken()
 
     begin
     {
-        $Uri = "$Server/api/tokens"
+        $Uri = "$Server/api/tokens/$($Token)"
     }
     process
     {
