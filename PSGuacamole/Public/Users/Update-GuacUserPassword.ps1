@@ -50,7 +50,7 @@ Function Update-GuacUserPassword()
 
         try
         {
-            $RestCall = Invoke-RestMethod -Method PATCH -Uri $Uri -ContentType 'application/json' -Body $Body
+            $RestCall = Invoke-RestMethod -Method PUT -Uri $Uri -ContentType 'application/json' -Body $Body
         }
         catch
         {
