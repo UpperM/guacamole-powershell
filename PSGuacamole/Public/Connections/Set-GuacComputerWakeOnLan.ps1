@@ -15,7 +15,7 @@ Function Set-GuacComputerWakeOnLan()
             Mandatory = $True
         )]
         [System.String]
-        $Computer,
+        $ConnectionId,
 
         [ValidateScript({$_ -match '^([0-9A-Fa-f]{2}[:-]){5}([0-9A-Fa-f]{2})$'})]
         [Parameter(
@@ -36,13 +36,8 @@ Function Set-GuacComputerWakeOnLan()
 
     begin
     {
-        $GuacComputer = Get-GuacConnections -DataSource $DataSource | Where-Object {$_.name -eq $Computer}
-        if (-Not $GuacComputer)
-        {
-            Write-Warning "Computer not found"
-            return $False
-        }
 
+        $GuacComputer = Get-GuacConnection -DataSource $DataSource -ConnectionId $ConnectionId
         $WolParameters = @{
             "wol-send-packet"="true"
             "wol-mac-addr"="$MacAddress"
@@ -58,7 +53,7 @@ Function Set-GuacComputerWakeOnLan()
     {
         try
         {
-            Update-GuacConnection -DataSource $DataSource -Parameters $GuacComputer -ConnectionId $GuacComputer.identifier
+            Update-GuacConnection -DataSource $DataSource -Parameters $GuacComputer -ConnectionId $ConnectionId
         }
         catch
         {
