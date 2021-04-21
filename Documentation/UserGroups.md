@@ -1,4 +1,4 @@
-# UserGroups
+# UserGroups 
 
  - [Add-GuacUserGroupConnection](#add-guacusergroupconnection)
  - [Add-GuacUserGroupMember](#add-guacusergroupmember)
@@ -8,6 +8,7 @@
  - [New-GuacUserGroup](#new-guacusergroup)
  - [Remove-GuacUserGroup](#remove-guacusergroup)
  - [Remove-GuacUserGroupConnection](#remove-guacusergroupconnection)
+ - [Remove-GuacUserGroupMember](#remove-guacusergroupmember)
  - [Remove-GuacUserGroupPermission](#remove-guacusergrouppermission)
  - [Update-GuacUserGroup](#update-guacusergroup)
  - [Update-GuacUserGroupParent](#update-guacusergroupparent)
@@ -49,6 +50,10 @@ Remove-GuacUserGroup -DataSource mysql -Group "Parent"
 ## Remove-GuacUserGroupConnection
 ```Powershell
 Remove-GuacUserGroupConnection -DataSource mysql -ConnectionId 52 -Group "test"
+```
+## Remove-GuacUserGroupMember
+```Powershell
+Remove-GuacUserGroupMember -DataSource mysql -Member "john.doe" -Group "test"
 ```
 ## Remove-GuacUserGroupPermission
 ```Powershell

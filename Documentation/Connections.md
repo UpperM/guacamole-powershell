@@ -5,6 +5,7 @@
  - [Get-GuacConnections](#get-guacconnections)
  - [New-GuacConnection](#new-guacconnection)
  - [Remove-GuacConnection](#remove-guacconnection)
+ - [Set-GuacComputerWakeOnLan](#set-guaccomputerwakeonlan)
  - [Stop-GuacConnection](#stop-guacconnection)
  - [Update-GuacConnection](#update-guacconnection)
 
@@ -116,6 +117,10 @@ New-GuacConnection -DataSource mysql -Parameters $TelnetParameters
 ## Remove-GuacConnection
 ```Powershell
 Remove-GuacConnection -DataSource mysql -ConnectionId 74
+```
+## Set-GuacComputerWakeOnLan
+```Powershell
+Set-GuacComputerWakeOnLan -DataSource mysql -Computer "PC-001" -MacAddress "A4:BB:6D:7D:BF:6A" -BroadcastAddress "192.168.1.255"
 ```
 ## Stop-GuacConnection
 ```Powershell

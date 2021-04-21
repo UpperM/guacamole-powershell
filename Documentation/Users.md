@@ -1,4 +1,4 @@
-# Users
+# Users 
 
  - [Add-GuacUserConnection](#add-guacuserconnection)
  - [Get-GuacUser](#get-guacuser)
