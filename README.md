@@ -1,7 +1,7 @@
 # PSGuacamole
 ![alt text](https://raw.githubusercontent.com/UpperM/guacamole-powershell/master/PSGuacamole-logo.png)
 
-[![GitHub release](https://img.shields.io/badge/release-v1.0.3-blue)](https://github.com/UpperM/guacamole-powershell/releases/latest)
+[![GitHub release](https://img.shields.io/badge/release-v1.0.4-blue)](https://github.com/UpperM/guacamole-powershell/releases/latest)
 
 This PowerShell module provides a series of cmdlets for interacting with the [Apache Guacamole API](https://guacamole.apache.org/), performed by wrapping `Invoke-RestMethod` for the API calls.
 
