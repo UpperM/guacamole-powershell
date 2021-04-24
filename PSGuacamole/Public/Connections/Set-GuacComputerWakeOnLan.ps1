@@ -38,15 +38,13 @@ Function Set-GuacComputerWakeOnLan()
     {
 
         $GuacComputer = Get-GuacConnection -DataSource $DataSource -ConnectionId $ConnectionId
-        $WolParameters = @{
-            "wol-send-packet"="true"
-            "wol-mac-addr"="$MacAddress"
-            "wol-broadcast-addr"="$BroadcastAddress"
-        }
 
-        $WolParameters = New-Object PsObject -Property $WolParameters
+        $GuacComputerParameters = Get-GuacConnection -DataSource $DataSource -ConnectionId $ConnectionId -Details $True
+        $GuacComputerParameters | Add-Member -MemberType NoteProperty -Name "wol-send-packet" -Value "true" -Force
+        $GuacComputerParameters | Add-Member -MemberType NoteProperty -Name "wol-mac-addr" -Value $MacAddress -Force
+        $GuacComputerParameters | Add-Member -MemberType NoteProperty -Name "wol-broadcast-addr" -Value $BroadcastAddress -Force
 
-        $GuacComputer | Add-Member -MemberType NoteProperty -Name "parameters" -Value $WolParameters
+        $GuacComputer | Add-Member -MemberType NoteProperty -Name "parameters" -Value $GuacComputerParameters -Force
 
     }
     process
