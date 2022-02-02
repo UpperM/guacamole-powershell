@@ -20,6 +20,14 @@ Function New-GuacToken()
         [ValidateNotNullOrEmpty()]
         [Parameter(
             Position = 2,
+            Mandatory = $False
+        )]
+        [System.String]
+        $TOTP,
+
+        [ValidateNotNullOrEmpty()]
+        [Parameter(
+            Position = 3,
             Mandatory = $true
         )]
         [System.String]
@@ -48,6 +56,11 @@ Function New-GuacToken()
             password = $Password
         }
 
+        if($Null -ne $TOTP)
+        {
+            $Body.Add("guac-totp",$TOTP)
+        }
+
         $Uri = "$Server/api/tokens"
     }
     process
@@ -59,7 +72,7 @@ Function New-GuacToken()
         }
         catch
         {
-
+            Write-Output "If TOTP is enabled, please provid -TOTP parameters with your TOTP code"
             Write-Warning $_.Exception.Message
             return $False
         }
@@ -74,5 +87,5 @@ Function New-GuacToken()
 }
 
 <#
-New-GuacToken -Username guacadmin -Password guacadmin -Server "http://srv-guacamole:8080/guacamole"
+New-GuacToken -Username guacadmin -Password guacadmin -Server "http://srv-guacamole:8080/guacamole" -TOTP 803505
 #>

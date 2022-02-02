@@ -5,7 +5,7 @@
 
 ## New-GuacToken
 ```Powershell
-New-GuacToken -Username guacadmin -Password guacadmin -Server "http://srv-guacamole:8080/guacamole"
+New-GuacToken -Username guacadmin -Password guacadmin -Server "http://srv-guacamole:8080/guacamole" -TOTP 803505
 ```
 ## Remove-GuacToken
 ```Powershell
