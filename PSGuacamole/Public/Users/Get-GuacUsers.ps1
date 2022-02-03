@@ -13,17 +13,15 @@ Function Get-GuacUsers()
     begin
     {
         $Uri = "$Server/api/session/data/$($DataSource)/users/?token=$($Token)"
-
     }
     process
     {
         try
         {
-            $RestCall = Invoke-RestMethod -Method GET -Uri $Uri -ContentType 'application/json' -Body $Body
+            $RestCall = Invoke-RestMethod -Method GET -Uri $Uri -ContentType 'application/json'
         }
         catch
         {
-
             Write-Warning $_.Exception.Message
             return $False
         }

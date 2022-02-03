@@ -9,8 +9,6 @@ Function Remove-GuacUserGroup()
         [System.String]
         $DataSource,
 
-
-
         [ValidateNotNullOrEmpty()]
         [Parameter(
             Position = 2,
@@ -18,7 +16,6 @@ Function Remove-GuacUserGroup()
         )]
         [System.String]
         $Group
-
     )
 
     begin
@@ -30,11 +27,10 @@ Function Remove-GuacUserGroup()
 
         try
         {
-            $RestCall = Invoke-RestMethod -Method DELETE -Uri $Uri -ContentType 'application/json' -Body $Body
+            $RestCall = Invoke-RestMethod -Method DELETE -Uri $Uri -ContentType 'application/json'
         }
         catch
         {
-
             Write-Warning $_.Exception.Message
             return $False
         }

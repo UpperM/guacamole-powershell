@@ -16,7 +16,6 @@ Function Remove-GuacConnection()
         )]
         [System.String]
         $ConnectionId
-
     )
 
     begin
@@ -27,7 +26,7 @@ Function Remove-GuacConnection()
     {
         try
         {
-            Invoke-RestMethod -Method DELETE -Uri $Uri -ContentType 'application/json' -Body $Body
+            Invoke-RestMethod -Method DELETE -Uri $Uri -ContentType 'application/json'
         }
         catch
         {

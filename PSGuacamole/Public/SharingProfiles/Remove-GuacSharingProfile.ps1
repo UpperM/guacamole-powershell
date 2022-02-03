@@ -26,7 +26,7 @@ Function Remove-GuacSharingProfile()
     {
         try
         {
-            Invoke-RestMethod -Method DELETE -Uri $Uri -ContentType 'application/json' -Body $Body
+            Invoke-RestMethod -Method DELETE -Uri $Uri -ContentType 'application/json'
         }
         catch
         {

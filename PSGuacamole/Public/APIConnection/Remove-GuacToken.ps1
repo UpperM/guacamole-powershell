@@ -19,7 +19,7 @@ Function Remove-GuacToken()
 
         try
         {
-            Invoke-RestMethod -Method DELETE -Body $Body -Uri $Uri
+            Invoke-RestMethod -Method DELETE -Uri $Uri
         }
         catch
         {

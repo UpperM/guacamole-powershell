@@ -9,8 +9,6 @@ Function Remove-GuacUser()
         [System.String]
         $DataSource,
 
-
-
         [ValidateNotNullOrEmpty()]
         [Parameter(
             Position = 2,
@@ -21,21 +19,19 @@ Function Remove-GuacUser()
 
     begin
     {
-        $Uri    = "$Server/api/session/data/$($DataSource)/users/$($Username)/?token=$($Token)"
+        $Uri = "$Server/api/session/data/$($DataSource)/users/$($Username)/?token=$($Token)"
     }
     process
     {
-
         try
         {
-            $RestCall = Invoke-RestMethod -Method DELETE -Uri $Uri -ContentType 'application/json' -Body $Body
+            $RestCall = Invoke-RestMethod -Method DELETE -Uri $Uri -ContentType 'application/json'
         }
         catch
         {
             Write-Warning $_.Exception.Message
             return $False
         }
-
     }
     end
     {

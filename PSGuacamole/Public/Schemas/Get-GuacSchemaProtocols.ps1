@@ -18,7 +18,7 @@ Function Get-GuacSchemaProtocols()
     {
         try
         {
-            $RestCall = Invoke-RestMethod -Method GET -Uri $Uri -ContentType 'application/json' -Body $Body
+            $RestCall = Invoke-RestMethod -Method GET -Uri $Uri -ContentType 'application/json'
         }
         catch
         {
