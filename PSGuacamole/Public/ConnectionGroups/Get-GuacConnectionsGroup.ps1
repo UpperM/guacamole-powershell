@@ -39,13 +39,15 @@ Function Get-GuacConnectionsGroup()
         }
 
         $Uri += "/?token=$($Token)"
+
+        Write-Output $Uri
     }
     process
     {
 
         try
         {
-            $RestCall = Invoke-RestMethod -Method GET -Uri $Uri -ContentType 'application/json' -Body $Body
+            $RestCall = Invoke-RestMethod -Method GET -Uri $Uri -ContentType 'application/json'
         }
         catch
         {
