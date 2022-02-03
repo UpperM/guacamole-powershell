@@ -71,7 +71,7 @@ Function Add-GuacUserGroupConnectionGroup()
         }
 
         $Body = $Body | ConvertTo-Json
-        Write-Output $Body
+
         $Uri = "$Server/api/session/data/$($DataSource)/userGroups/$Group/permissions?token=$($Token)"
 
     }
