@@ -17,7 +17,6 @@ Function Update-GuacUserPassword()
         [System.String]
         $Username,
 
-
         [ValidateNotNullOrEmpty()]
         [Parameter(
             Position = 2,
@@ -47,7 +46,6 @@ Function Update-GuacUserPassword()
     }
     process
     {
-
         try
         {
             $RestCall = Invoke-RestMethod -Method PUT -Uri $Uri -ContentType 'application/json' -Body $Body
@@ -57,7 +55,6 @@ Function Update-GuacUserPassword()
             Write-Warning $_.Exception.Message
             return $False
         }
-
     }
     end
     {

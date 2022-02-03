@@ -40,7 +40,6 @@ Function Get-GuacConnectionsGroup()
 
         $Uri += "/?token=$($Token)"
 
-        Write-Output $Uri
     }
     process
     {

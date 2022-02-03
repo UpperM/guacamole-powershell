@@ -9,8 +9,6 @@ Function Remove-GuacUserConnection()
         [System.String]
         $DataSource,
 
-
-
         [ValidateNotNullOrEmpty()]
         [Parameter(
             Position = 2,
@@ -18,7 +16,6 @@ Function Remove-GuacUserConnection()
         )]
         [System.String]
         $Username,
-
 
         [ValidateNotNullOrEmpty()]
         [Parameter(
@@ -44,7 +41,6 @@ Function Remove-GuacUserConnection()
     }
     process
     {
-
         try
         {
             $RestCall = Invoke-RestMethod -Method PATCH -Uri $Uri -ContentType 'application/json' -Body $Body
@@ -54,7 +50,6 @@ Function Remove-GuacUserConnection()
             Write-Warning $_.Exception.Message
             return $False
         }
-
     }
     end
     {

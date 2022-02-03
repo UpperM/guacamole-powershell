@@ -9,8 +9,6 @@ Function Update-GuacUser()
         [System.String]
         $DataSource,
 
-
-
         [ValidateNotNullOrEmpty()]
         [Parameter(
             Position = 2,
@@ -31,13 +29,9 @@ Function Update-GuacUser()
     {
         $Body   = ConvertTo-Json -InputObject $Parameters
         $Uri    = "$Server/api/session/data/$($DataSource)/users/$Username/?token=$($Token)"
-
-        Write-Output $Body
-
     }
     process
     {
-
         try
         {
             $RestCall = Invoke-RestMethod -Method PUT -Uri $Uri -ContentType 'application/json' -Body $Body
@@ -47,7 +41,6 @@ Function Update-GuacUser()
             Write-Warning $_.Exception.Message
             return $False
         }
-
     }
     end
     {

@@ -9,8 +9,6 @@ Function New-GuacUser()
         [System.String]
         $DataSource,
 
-
-
         [ValidateNotNullOrEmpty()]
         [Parameter(
             Position = 2,
@@ -26,7 +24,6 @@ Function New-GuacUser()
     }
     process
     {
-
         try
         {
             $RestCall = Invoke-RestMethod -Method POST -Uri $Uri -ContentType 'application/json' -Body $Body
@@ -36,7 +33,6 @@ Function New-GuacUser()
             Write-Warning $_.Exception.Message
             return $False
         }
-
     }
     end
     {

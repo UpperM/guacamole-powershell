@@ -9,8 +9,6 @@ Function Update-GuacConnectionGroup()
         [System.String]
         $DataSource,
 
-
-
         [Parameter(
             Position = 2,
             Mandatory = $True

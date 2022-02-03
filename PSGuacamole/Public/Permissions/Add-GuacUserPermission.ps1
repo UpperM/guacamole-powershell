@@ -41,8 +41,6 @@ Function Add-GuacUserPermission()
     {
         try
         {
-            Write-Output $Uri
-            Write-Output $Body
             $RestCall = Invoke-RestMethod -Method PATCH -Uri $Uri -ContentType 'application/json' -Body $Body
         }
         catch
