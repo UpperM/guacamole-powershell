@@ -17,7 +17,6 @@ Function Add-GuacUserGroupConnection()
         [System.String]
         $Group,
 
-
         [ValidateNotNullOrEmpty()]
         [Parameter(
             Position = 2,
@@ -29,13 +28,39 @@ Function Add-GuacUserGroupConnection()
 
     begin
     {
-        $Body = @{
+        # Get parent identifier of connection
+        $ParentIdentifier = (Get-GuacConnection -ConnectionId $ConnectionId -DataSource $DataSource).parentIdentifier
+        $Parents = @($ParentIdentifier)
+
+        # Let's search for parents of connection
+        while ($ParentIdentifier -ne 'ROOT')
+        {
+            $ParentInformation = Get-GuacConnectionsGroup -DataSource $DataSource -ConnectionGroupId $ParentIdentifier
+            $ParentIdentifier = $ParentInformation.parentIdentifier
+
+            if($ParentIdentifier -ne 'ROOT')
+            {
+                # Add parentId to $Parents array
+                $Parents += $ParentIdentifier
+            }
+        }
+
+        $ConnectionPermission = @{
             "op"= "add"
             "path"= "/connectionPermissions/$($ConnectionId)"
             "value"= "READ"
-        } | ConvertTo-Json
+        }
 
-        $Body = "[$($Body)]"
+        $Body = @($ConnectionPermission)
+        foreach ($Parent in $Parents)
+        {
+            $Body+= @{
+                "op"= "add"
+                "path"= "/connectionGroupPermissions/$($Parent)"
+                "value"= "READ"
+            }
+        }
+        $Body = $Body | ConvertTo-Json
 
         $Uri = "$Server/api/session/data/$($DataSource)/userGroups/$Group/permissions?token=$($Token)"
 
