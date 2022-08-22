@@ -38,9 +38,6 @@ Function Update-GuacUserGroupParent()
 
         $Body   = "[$($Parameters)]"
         $Uri    = "$Server/api/session/data/$($DataSource)/userGroups/$Parent/userGroups/?token=$($Token)"
-
-        Write-Output $Uri
-        Write-Output $Body
     }
     process
     {
