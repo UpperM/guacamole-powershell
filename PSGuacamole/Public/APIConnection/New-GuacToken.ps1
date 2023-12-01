@@ -39,16 +39,22 @@ Function New-GuacToken()
         if ($Null -eq $Password -or $Password.Length -eq 0)
         {
             $SecurePassword = Read-Host "Enter password" -AsSecureString
-
-            # Decode SecureString to Plain text for Guacamole (https://www.powershelladmin.com/wiki/Powershell_prompt_for_password_convert_securestring_to_plain_text)
-            # Create a "password pointer"
-            $PasswordPointer = [Runtime.InteropServices.Marshal]::SecureStringToBSTR($SecurePassword)
-
-            # Get the plain text version of the password
-            $Password = [Runtime.InteropServices.Marshal]::PtrToStringAuto($PasswordPointer)
-
-            # Free the pointer
-            [Runtime.InteropServices.Marshal]::ZeroFreeBSTR($PasswordPointer)
+            # If running on Windows
+            if ($IsWindows)
+            {
+                # Decode SecureString to Plain text for Guacamole (https://www.powershelladmin.com/wiki/Powershell_prompt_for_password_convert_securestring_to_plain_text)
+                # Create a "password pointer"
+                $PasswordPointer = [Runtime.InteropServices.Marshal]::SecureStringToBSTR($SecurePassword)
+    
+                # Get the plain text version of the password
+                $Password = [Runtime.InteropServices.Marshal]::PtrToStringAuto($PasswordPointer)
+    
+                # Free the pointer
+                [Runtime.InteropServices.Marshal]::ZeroFreeBSTR($PasswordPointer)
+            # If running on Linux of MacOS
+            } else {
+                $Password = ConvertFrom-SecureString -SecureString $SecurePassword -AsPlaintext
+            }
         }
 
         $Body = @{
